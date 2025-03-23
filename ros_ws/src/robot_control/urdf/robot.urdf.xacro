@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<robot name="cardboard_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Import the gazebo_ros2 plugin and hardware interface macros -->
+  <xacro:include filename="$(find robot_control)/urdf/gazebo_ros2_control.urdf.xacro" />
+
+  <!-- Constants -->
+  <xacro:property name="PI" value="3.14159265359" />
+  
+  <!-- Robot Dimensions -->
+  <xacro:property name="body_width" value="0.30" />
+  <xacro:property name="body_length" value="0.30" />
+  <xacro:property name="body_height" value="0.30" />
+  
+  <!-- Wheel Properties -->
+  <xacro:property name="wheel_radius" value="0.05" />
+  <xacro:property name="wheel_width" value="0.04" />
+  <xacro:property name="wheel_separation" value="0.24" />
+  <xacro:property name="wheel_offset_x" value="0.0" />
+  <xacro:property name="wheel_offset_z" value="${-body_height/2 + wheel_radius}" />
+  
+  <!-- Castor Wheel Properties -->
+  <xacro:property name="castor_radius" value="0.02" />
+  <xacro:property name="castor_offset_x_front" value="${body_length/2 - castor_radius}" />
+  <xacro:property name="castor_offset_x_rear" value="${-body_length/2 + castor_radius}" />
+  <xacro:property name="castor_offset_z" value="${-body_height/2 + castor_radius}" />
+  
+  <!-- Material Properties -->
+  <material name="cardboard_color">
+    <color rgba="0.82 0.71 0.55 1.0"/>
+  </material>
+  
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  
+  <!-- Mass Properties -->
+  <xacro:property name="body_mass" value="1.0" />
+  <xacro:property name="wheel_mass" value="0.2" />
+  <xacro:property name="castor_mass" value="0.05" />
+  <xacro:property name="camera_mass" value="0.1" />
+  <xacro:property name="imu_mass" value="0.05" />
+  <xacro:property name="imu_x_offset" value="-0.07" />
+  <!-- Castor Wheel Macro -->
+  <xacro:macro name="castor_wheel" params="prefix x_offset y_offset">
+    <link name="${prefix}_castor_link">
+      <visual>
+        <geometry>
+          <sphere radius="${castor_radius}"/>
+        </geometry>
+        <material name="black"/>
+      </visual>
+      <collision>
+        <geometry>
+          <sphere radius="${castor_radius}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="${castor_mass}"/>
+        <inertia 
+          ixx="${2.0/5.0 * castor_mass * castor_radius * castor_radius}" 
+          ixy="0.0" 
+          ixz="0.0" 
+          iyy="${2.0/5.0 * castor_mass * castor_radius * castor_radius}" 
+          iyz="0.0" 
+          izz="${2.0/5.0 * castor_mass * castor_radius * castor_radius}"/>
+      </inertial>
+    </link>
+    
+    <joint name="${prefix}_castor_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="${prefix}_castor_link"/>
+      <origin xyz="${x_offset} ${y_offset} ${castor_offset_z}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+  
+  <!-- Drive Wheel Macro -->
+  <xacro:macro name="drive_wheel" params="prefix x_offset y_offset">
+    <link name="${prefix}_wheel_link">
+      <visual>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <material name="black"/>
+        <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      </collision>
+      <inertial>
+        <mass value="${wheel_mass}"/>
+        <inertia 
+          ixx="${wheel_mass * (3 * wheel_radius * wheel_radius + wheel_width * wheel_width) / 12}" 
+          ixy="0.0" 
+          ixz="0.0" 
+          iyy="${wheel_mass * (3 * wheel_radius * wheel_radius + wheel_width * wheel_width) / 12}" 
+          iyz="0.0" 
+          izz="${wheel_mass * wheel_radius * wheel_radius / 2}"/>
+        <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      </inertial>
+    </link>
+    
+    <joint name="${prefix}_wheel_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="${prefix}_wheel_link"/>
+      <origin xyz="${x_offset} ${y_offset} ${wheel_offset_z}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+
+    <!-- Add a transmission for the wheel joint -->
+    <transmission name="${prefix}_wheel_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}_wheel_motor">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+  
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+      <material name="cardboard_color"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="${body_mass}"/>
+      <inertia 
+        ixx="${body_mass * (body_width * body_width + body_height * body_height) / 12}" 
+        ixy="0.0" 
+        ixz="0.0" 
+        iyy="${body_mass * (body_length * body_length + body_height * body_height) / 12}" 
+        iyz="0.0" 
+        izz="${body_mass * (body_length * body_length + body_width * body_width) / 12}"/>
+    </inertial>
+  </link>
+  
+  <!-- Open Front Face -->
+  <link name="front_panel">
+    <visual>
+      <geometry>
+        <box size="0.001 ${body_width} ${body_height}"/>
+      </geometry>
+      <material name="cardboard_color"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.001 ${body_width} ${body_height}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.01"/>
+      <inertia 
+        ixx="0.0001" 
+        ixy="0.0" 
+        ixz="0.0" 
+        iyy="0.0001" 
+        iyz="0.0" 
+        izz="0.0001"/>
+    </inertial>
+  </link>
+  
+  <joint name="front_panel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_panel"/>
+    <origin xyz="${body_length/2} 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- Add drive wheels -->
+  <xacro:drive_wheel prefix="left" x_offset="${wheel_offset_x}" y_offset="${wheel_separation/2}"/>
+  <xacro:drive_wheel prefix="right" x_offset="${wheel_offset_x}" y_offset="${-wheel_separation/2}"/>
+  
+  <!-- Add castor wheels -->
+  <xacro:castor_wheel prefix="front_left" x_offset="${castor_offset_x_front}" y_offset="${body_width/4}"/>
+  <xacro:castor_wheel prefix="front_right" x_offset="${castor_offset_x_front}" y_offset="${-body_width/4}"/>
+  <xacro:castor_wheel prefix="rear_left" x_offset="${castor_offset_x_rear}" y_offset="${body_width/4}"/>
+  <xacro:castor_wheel prefix="rear_right" x_offset="${castor_offset_x_rear}" y_offset="${-body_width/4}"/>
+  
+  <!-- Camera -->
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.10 0.03"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.05 0.10 0.03"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="${camera_mass}"/>
+      <inertia 
+        ixx="${camera_mass * 0.0001}" 
+        ixy="0.0" 
+        ixz="0.0" 
+        iyy="${camera_mass * 0.0001}" 
+        iyz="0.0" 
+        izz="${camera_mass * 0.0001}"/>
+    </inertial>
+  </link>
+  
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="${body_length/4} 0 ${body_height/2 + 0.015}" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- Camera optical frame -->
+  <link name="camera_optical_frame"/>
+  
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_optical_frame"/>
+    <origin xyz="0 0 0" rpy="${-PI/2} 0 ${-PI/2}"/>
+  </joint>
+  
+  <!-- IMU -->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.01"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.02 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="${imu_mass}"/>
+      <inertia 
+        ixx="${imu_mass * 0.0001}" 
+        ixy="0.0" 
+        ixz="0.0" 
+        iyy="${imu_mass * 0.0001}" 
+        iyz="0.0" 
+        izz="${imu_mass * 0.0001}"/>
+    </inertial>
+  </link>
+  
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="${imu_x_offset} 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Include Gazebo ROS2 control and plugin configurations -->
+  <xacro:gazebo_ros2_control 
+    wheel_separation="${wheel_separation}" 
+    wheel_radius="${wheel_radius}"
+    camera_name="realsense"
+    camera_frame="camera_optical_frame"
+    left_wheel_joint="left_wheel_joint"
+    right_wheel_joint="right_wheel_joint" />
+
+</robot>

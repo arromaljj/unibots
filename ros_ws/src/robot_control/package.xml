@@ -4,16 +4,18 @@
   <name>robot_control</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="sigma@todo.todo">sigma</maintainer>
+  <maintainer email="arromal.jayan@gmail.com">sigma</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclpy</depend>
+  <depend>ament_index_python</depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+  <depend>robot_state_publisher</depend>
 
   <test_depend>ament_lint_auto</test_depend>
-  <test_depend>ament_lint_common</test_depend>
-
   <export>
     <build_type>ament_cmake</build_type>
   </export>

@@ -15,8 +15,8 @@ def main():
     standby_line.request(consumer="motors", type=gpiod.LINE_REQ_DIR_OUT)
     
     # Then create the motors, passing the standby_line to each
-    left_motor = Motor(8, 7, 12, standby_pin, False, shared_standby_line=standby_line)  # Left motor
-    right_motor = Motor(23, 24, 13, standby_pin, True, shared_standby_line=standby_line)  # Right motor (reversed)
+    left_motor = Motor(8, 7, 12, standby_pin, True, shared_standby_line=standby_line)  # Left motor
+    right_motor = Motor(23, 24, 13, standby_pin, False, shared_standby_line=standby_line)  # Right motor (reversed)
     
     try:
         print("Starting motor test sequence...")

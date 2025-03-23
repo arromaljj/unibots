@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+  <!-- Define constants -->
+  <xacro:property name="PI" value="3.1415926535897931"/>
+
+  <!-- Include ros2_control macro -->
+  <xacro:include filename="$(find robot_control_py)/urdf/robot_control.xacro" />
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.2 0.3 0.1"/>
+      </geometry>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.2 0.3 0.1"/>
+      </geometry>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+    </inertial>
+  </link>
+
+  <!-- Left Wheel Link -->
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.033" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.033" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.00005" ixy="0.0" ixz="0.0" iyy="0.00005" iyz="0.0" izz="0.00005"/>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+    </inertial>
+  </link>
+
+  <!-- Right Wheel Link -->
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.033" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.033" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.00005" ixy="0.0" ixz="0.0" iyy="0.00005" iyz="0.0" izz="0.00005"/>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+    </inertial>
+  </link>
+
+  <!-- Caster Wheel Link -->
+  <link name="caster_wheel">
+    <visual>
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.015"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <!-- Left Wheel Joint -->
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 0.085 0.033" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Right Wheel Joint -->
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -0.085 0.033" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Caster Joint -->
+  <joint name="caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_wheel"/>
+    <origin xyz="0.07 0 0.015" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Include the ros2_control description -->
+  <xacro:robot_control name="tb6612fng_hardware"/>
+
+</robot> 

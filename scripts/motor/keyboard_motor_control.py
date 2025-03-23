@@ -16,8 +16,8 @@ class KeyboardController:
         self.standby_line.request(consumer="motors", type=gpiod.LINE_REQ_DIR_OUT)
         
         # Create the motors, passing the standby_line to each
-        self.left_motor = Motor(8, 7, 12, self.standby_pin, False, shared_standby_line=self.standby_line)
-        self.right_motor = Motor(23, 24, 13, self.standby_pin, True, shared_standby_line=self.standby_line)
+        self.left_motor = Motor(8, 7, 12, self.standby_pin, True, shared_standby_line=self.standby_line)
+        self.right_motor = Motor(23, 24, 13, self.standby_pin, False, shared_standby_line=self.standby_line)
         
         # Control variables
         self.running = False

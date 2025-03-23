@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<library>
+  <class name="robot_control_py/DummyHardwareInterface"
+         type="robot_control_py.src.robot_control_py.dummy_hardware_interface:export_plugin"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Dummy Hardware Interface for testing plugin loading.
+    </description>
+  </class>
+</library>

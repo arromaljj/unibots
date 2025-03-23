@@ -1,0 +1,64 @@
+# ROS2 specific
+install/
+log/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# C++
+*.o
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# RealSense specific
+librealsense/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Environment variables
+.env
+.venv
+venv/
+ENV/
+
+# Build and dependency directories
+devel/
+build_isolated/
+devel_isolated/
+.catkin_tools/
+.colcon/
+
+# Custom backup files
+*~
+*.bak 

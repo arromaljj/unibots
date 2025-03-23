@@ -1,0 +1,305 @@
+tf_prefix is 
+map_frame is map
+odom_frame is odom
+base_link_frame is base_link
+base_link_output_frame is base_link
+world_frame is odom
+transform_time_offset is 0
+transform_timeout is 0
+frequency is 10
+sensor_timeout is 0.1
+two_d_mode is false
+smooth_lagged_data is false
+history_length is 0
+use_control is false
+control_config is (false false false false false false )
+
+control_timeout is 0
+acceleration_limits are (1 1 1 1 1 1 )
+
+acceleration_gains are (1 1 1 1 1 1 )
+
+deceleration_limits are (1 1 1 1 1 1 )
+
+deceleration_gains are (1 1 1 1 1 1 )
+
+initial state is [0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           ]
+
+dynamic_process_noise_covariance is false
+permit_corrected_publication is false
+print_diagnostics is true
+Subscribed to /bno055/imu (imu0)
+	imu0_differential is false
+	imu0_pose_rejection_threshold is 1.7977e+308
+	imu0_twist_rejection_threshold is 1.7977e+308
+	imu0_linear_acceleration_rejection_threshold is 1.7977e+308
+	imu0_remove_gravitational_acceleration is false
+	imu0 pose update vector is (false false false true true true false false false false false false false false false )
+	imu0 twist update vector is (false false false false false false false false false true true true false false false )
+	imu0 acceleration update vector is (false false false false false false false false false false false false true true true )
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754935.7708790302
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754935.8708539009
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754935.9708621502
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.0708510876
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.1708371639
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.2708508968
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.3708176613
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.4708404541
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.5708544254
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.670842886
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.7708365917
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.8708434105
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754936.9708197117
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.0707979202
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.1707940102
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.2707939148
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.3708393574
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.4708507061
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.5708379745
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.6708600521
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.7708363533
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.8708536625
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754937.9707999229
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.070807457
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.1708168983
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.2708129883
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.3708076477
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.4708323479
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.5708370209
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.6708650589
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.7708351612
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.8708593845
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754938.9708509445
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754939.0708477497
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754939.1708552837
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754939.2708456516
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754939.370839119
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------
+------ RosFilter<T>::integrateMeasurements ------
+
+Integration time is 1742754939.4708518982
+0 measurements in queue.
+Filter not yet initialized.
+
+----- /RosFilter<T>::integrateMeasurements ------

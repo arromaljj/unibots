@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="robot_control" params="name">
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <plugin>robot_control_py/TB6612FNGHardwareInterface</plugin>
+        <param name="gpio_chip">gpiochip4</param>
+        
+        <!-- Left wheel motor pins -->
+        <param name="left_in1_pin">8</param>
+        <param name="left_in2_pin">7</param>
+        <param name="left_pwm_pin">12</param>
+        
+        <!-- Right wheel motor pins -->
+        <param name="right_in1_pin">23</param>
+        <param name="right_in2_pin">24</param>
+        <param name="right_pwm_pin">13</param>
+        
+        <!-- Standby pin (shared between motors) -->
+        <param name="standby_pin">25</param>
+        
+        <!-- Motor configurations -->
+        <param name="left_reversed">true</param>
+        <param name="right_reversed">false</param>
+        
+        <!-- Maximum velocity that corresponds to 100% duty cycle -->
+        <param name="max_velocity">10.0</param>
+      </hardware>
+      
+      <!-- Left wheel -->
+      <joint name="left_wheel_joint">
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+      
+      <!-- Right wheel -->
+      <joint name="right_wheel_joint">
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+    </ros2_control>
+  </xacro:macro>
+
+</robot> 
