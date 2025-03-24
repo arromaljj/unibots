@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(robot_control_py)
+project(imu_republishing)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -7,42 +7,8 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(ament_cmake_python REQUIRED)
 find_package(rclpy REQUIRED)
-find_package(hardware_interface REQUIRED)
-find_package(pluginlib REQUIRED)
-find_package(controller_manager REQUIRED)
-find_package(rclcpp_lifecycle REQUIRED)
-find_package(diff_drive_controller REQUIRED)
-
-# Install Python modules
-ament_python_install_package(${PROJECT_NAME}
-  PACKAGE_DIR src/${PROJECT_NAME}
-)
-
-
-# Make Python scripts executable
-
-# Export dependencies
-ament_export_dependencies(
-  hardware_interface
-  pluginlib
-  rclpy
-)
-
-# Install launch, config, and URDF files
-install(DIRECTORY
-  launch
-  config
-  urdf
-  DESTINATION share/${PROJECT_NAME}
-)
-
-# Install plugin description file
-install(FILES
-  tb6612fng_hardware_interface.xml
-  DESTINATION share/${PROJECT_NAME}
-)
+find_package(sensor_msgs REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -55,5 +21,11 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+# Install Python executables
+install(PROGRAMS
+  src/imu_republisher_node.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()

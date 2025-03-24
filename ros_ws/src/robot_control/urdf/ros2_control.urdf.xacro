@@ -1,10 +1,19 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="robot_control" params="name">
-    <ros2_control name="${name}" type="system">
+  <!-- 
+    This file contains the hardware interface configuration for ROS2 Control
+    Configured for real hardware with TB6612FNG motor driver
+  -->
+  
+  <xacro:macro name="unibots_ros2_control" 
+               params="wheel_separation wheel_radius
+                       left_wheel_joint right_wheel_joint">
+    
+    <!-- ROS2 Control Configuration for Real Hardware -->
+    <ros2_control name="DiffDriveController" type="system">
       <hardware>
-        <plugin>robot_control_py/TB6612FNGHardwareInterface</plugin>
+        <plugin>robot_control/UnibotsMotorHardwareInterface</plugin>
         <param name="gpio_chip">gpiochip4</param>
         
         <!-- Left wheel motor pins -->
@@ -24,24 +33,28 @@
         <param name="left_reversed">true</param>
         <param name="right_reversed">false</param>
         
-        <!-- Maximum velocity that corresponds to 100% duty cycle -->
+        <!-- Max velocity that corresponds to 100% duty cycle -->
         <param name="max_velocity">10.0</param>
       </hardware>
       
-      <!-- Left wheel -->
-      <joint name="left_wheel_joint">
-        <command_interface name="velocity"/>
+      <joint name="${left_wheel_joint}">
+        <command_interface name="velocity">
+          <param name="min">-10</param>
+          <param name="max">10</param>
+        </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
       
-      <!-- Right wheel -->
-      <joint name="right_wheel_joint">
-        <command_interface name="velocity"/>
+      <joint name="${right_wheel_joint}">
+        <command_interface name="velocity">
+          <param name="min">-10</param>
+          <param name="max">10</param>
+        </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
     </ros2_control>
+    
   </xacro:macro>
-
-</robot> 
+</robot>

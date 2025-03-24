@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot name="cardboard_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <!-- Import the gazebo_ros2 plugin and hardware interface macros -->
-  <xacro:include filename="$(find robot_control)/urdf/gazebo_ros2_control.urdf.xacro" />
+  <!-- Import the ros2_control interface macro -->
+  <xacro:include filename="$(find robot_control)/urdf/ros2_control.urdf.xacro" />
 
   <!-- Constants -->
   <xacro:property name="PI" value="3.14159265359" />
@@ -265,13 +265,19 @@
     <origin xyz="${imu_x_offset} 0 0" rpy="0 0 0"/>
   </joint>
 
-  <!-- Include Gazebo ROS2 control and plugin configurations -->
-  <xacro:gazebo_ros2_control 
+  <!-- Include ROS2 control configuration for real hardware -->
+  <xacro:unibots_ros2_control 
     wheel_separation="${wheel_separation}" 
     wheel_radius="${wheel_radius}"
-    camera_name="realsense"
-    camera_frame="camera_optical_frame"
     left_wheel_joint="left_wheel_joint"
     right_wheel_joint="right_wheel_joint" />
+
+  <!-- Add ROS2 Control -->
+  <xacro:unibots_ros2_control
+    wheel_separation="${wheel_separation}"
+    wheel_radius="${wheel_radius}"
+    left_wheel_joint="left_wheel_joint"
+    right_wheel_joint="right_wheel_joint"
+  />
 
 </robot>

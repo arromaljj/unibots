@@ -18,19 +18,25 @@ echo ""
 ##############################################
 # Step 2: Clone and Build librealsense SDK
 ##############################################
-echo "Step 2: Cloning the librealsense SDK (v2.54.1)..."
+echo "Step 2: Setting up librealsense SDK (v2.54.1)..."
 cd ~
 if [ -d "librealsense" ]; then
-    echo "Directory 'librealsense' exists. Updating repository..."
+    echo "Directory 'librealsense' exists. Ensuring correct version..."
     cd librealsense
-    git pull
+    git fetch
+    git checkout v2.54.1
 else
-    git clone -b v2.54.1 https://github.com/IntelRealSense/librealsense.git
+    git clone https://github.com/IntelRealSense/librealsense.git
     cd librealsense
+    git checkout v2.54.1
 fi
 
+# Patch the version.h file to include cstdint
+echo "Patching version.h file..."
+sed -i '1i#include <cstdint>' third-party/rsutils/include/rsutils/version.h
+
 echo "Setting up udev rules for RealSense camera..."
-./scripts/setup_udev_rules.sh
+sudo ./scripts/setup_udev_rules.sh
 
 echo "Creating build directory..."
 mkdir -p build && cd build

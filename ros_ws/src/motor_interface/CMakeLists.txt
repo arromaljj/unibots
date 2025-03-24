@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(robot_control)
+project(motor_interface)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -8,41 +8,6 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
-find_package(hardware_interface REQUIRED)
-find_package(pluginlib REQUIRED)
-
-# Install Python modules
-install(
-  DIRECTORY src/
-  DESTINATION lib/${PROJECT_NAME}
-  PATTERN "*.py"
-)
-
-install(
-  PROGRAMS
-  src/hardware_interface.py
-  DESTINATION lib/${PROJECT_NAME}
-)
-
-# Install plugin description
-install(
-  FILES unibots_hardware_interface.xml
-  DESTINATION share/${PROJECT_NAME}
-)
-
-# Install directories
-install(
-  DIRECTORY
-  launch
-  urdf
-  config
-  DESTINATION share/${PROJECT_NAME}
-)
-
-# Make sure PYTHONPATH is set up correctly for pluginlib
-ament_environment_hooks(
-  "${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/robot_control.dsv.in"
-)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -55,12 +20,5 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
-
-# Export dependencies and pluginlib
-ament_export_dependencies(
-  hardware_interface
-  pluginlib
-  rclpy
-)
 
 ament_package()

@@ -1,0 +1,14 @@
+# Goal
+float32 duration     # Duration in seconds for calibration
+uint32 window_size   # Size of moving average window (number of samples)
+---
+# Result
+bool success
+string message
+float64 drift_x     # Final x-axis drift value
+float64 drift_y     # Final y-axis drift value
+float64 drift_z     # Final z-axis drift value
+---
+# Feedback
+float32 time_elapsed    # Time elapsed in seconds
+uint32 samples_collected  # Number of samples collected so far 
