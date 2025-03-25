@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<library path="libmotor_interface">
+  <class name="motor_interface/UnibotsMotorHardwareInterface"
+         type="motor_interface::UnibotsMotorHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware interface for the Unibots motor controller
+    </description>
+  </class>
+</library> 

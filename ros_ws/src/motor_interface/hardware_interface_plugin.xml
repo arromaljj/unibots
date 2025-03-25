@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<library path="motor_interface">
+  <class name="motor_interface/UnibotsMotorHardwareInterface"
+         type="motor_interface::UnibotsMotorHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware interface for TB6612FNG motor driver on Raspberry Pi
+    </description>
+  </class>
+</library> 

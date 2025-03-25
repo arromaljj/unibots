@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<library path="robot_control">
+  <class name="robot_control/UnibotsMotorHardwareInterface"
+         type="robot_control.hardware_interface:UnibotsMotorHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware Interface for TB6612FNG motor controller
+    </description>
+  </class>
+</library> 

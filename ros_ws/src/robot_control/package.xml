@@ -15,7 +15,6 @@
   <depend>launch_ros</depend>
   <depend>robot_state_publisher</depend>
   <depend>hardware_interface</depend>
-  <depend>pluginlib</depend>
   <depend>controller_manager</depend>
   <depend>diff_drive_controller</depend>
   <depend>joint_state_broadcaster</depend>

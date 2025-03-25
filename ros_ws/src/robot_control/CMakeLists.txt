@@ -18,17 +18,8 @@ install(
   PATTERN "*.py"
 )
 
-install(
-  PROGRAMS
-  src/hardware_interface.py
-  DESTINATION lib/${PROJECT_NAME}
-)
 
-# Install plugin description
-install(
-  FILES unibots_hardware_interface.xml
-  DESTINATION share/${PROJECT_NAME}
-)
+
 
 # Install directories
 install(
@@ -39,10 +30,7 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
-# Make sure PYTHONPATH is set up correctly for pluginlib
-ament_environment_hooks(
-  "${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/robot_control.dsv.in"
-)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

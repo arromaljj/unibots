@@ -1,7 +1,12 @@
 # ROS2 specific
-install/
-log/
-build/
+install/*
+log/*
+build/*
+
+
+install
+log
+build
 
 # Python
 __pycache__/

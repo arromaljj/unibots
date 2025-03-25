@@ -12,7 +12,7 @@ def generate_launch_description():
     # Get the path to the package
     pkg_share = get_package_share_directory('robot_control')
     
-    # Path to the URDF file
+    # Path to the URDF file 
     urdf_file = os.path.join(pkg_share, 'urdf', 'robot.urdf.xacro')
     
     # Generate URDF content

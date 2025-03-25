@@ -265,14 +265,7 @@
     <origin xyz="${imu_x_offset} 0 0" rpy="0 0 0"/>
   </joint>
 
-  <!-- Include ROS2 control configuration for real hardware -->
-  <xacro:unibots_ros2_control 
-    wheel_separation="${wheel_separation}" 
-    wheel_radius="${wheel_radius}"
-    left_wheel_joint="left_wheel_joint"
-    right_wheel_joint="right_wheel_joint" />
-
-  <!-- Add ROS2 Control -->
+  <!-- Add ros2_control interface -->
   <xacro:unibots_ros2_control
     wheel_separation="${wheel_separation}"
     wheel_radius="${wheel_radius}"

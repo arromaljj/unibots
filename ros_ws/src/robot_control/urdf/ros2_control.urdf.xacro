@@ -3,38 +3,31 @@
 
   <!-- 
     This file contains the hardware interface configuration for ROS2 Control
-    Configured for real hardware with TB6612FNG motor driver
+    Configured to work with motor_control_node
   -->
   
   <xacro:macro name="unibots_ros2_control" 
                params="wheel_separation wheel_radius
                        left_wheel_joint right_wheel_joint">
     
-    <!-- ROS2 Control Configuration for Real Hardware -->
+    <!-- ROS2 Control Configuration -->
     <ros2_control name="DiffDriveController" type="system">
       <hardware>
-        <plugin>robot_control/UnibotsMotorHardwareInterface</plugin>
-        <param name="gpio_chip">gpiochip4</param>
-        
-        <!-- Left wheel motor pins -->
+        <plugin>motor_interface/UnibotsMotorHardwareInterface</plugin>
+        <!-- Add all the hardware parameters your interface needs -->
         <param name="left_in1_pin">8</param>
         <param name="left_in2_pin">7</param>
         <param name="left_pwm_pin">12</param>
-        
-        <!-- Right wheel motor pins -->
         <param name="right_in1_pin">23</param>
         <param name="right_in2_pin">24</param>
         <param name="right_pwm_pin">13</param>
-        
-        <!-- Standby pin (shared between motors) -->
         <param name="standby_pin">25</param>
-        
-        <!-- Motor configurations -->
+        <param name="wheel_separation">${wheel_separation}</param>
+        <param name="wheel_radius">${wheel_radius}</param>
         <param name="left_reversed">true</param>
         <param name="right_reversed">false</param>
-        
-        <!-- Max velocity that corresponds to 100% duty cycle -->
-        <param name="max_velocity">10.0</param>
+        <param name="min_pwm">0</param>
+        <param name="max_pwm">100</param>
       </hardware>
       
       <joint name="${left_wheel_joint}">
@@ -42,7 +35,6 @@
           <param name="min">-10</param>
           <param name="max">10</param>
         </command_interface>
-        <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
       
@@ -51,7 +43,6 @@
           <param name="min">-10</param>
           <param name="max">10</param>
         </command_interface>
-        <state_interface name="position"/>
         <state_interface name="velocity"/>
       </joint>
     </ros2_control>

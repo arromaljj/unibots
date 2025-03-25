@@ -1,8 +1,6 @@
-# This configuration file specifies the controllers and hardware interface parameters
-
 controller_manager:
   ros__parameters:
-    update_rate: 50  # Hz
+    update_rate: 2  # Hz - Increased for smoother control
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
@@ -14,65 +12,44 @@ diff_drive_controller:
   ros__parameters:
     left_wheel_names: ["left_wheel_joint"]
     right_wheel_names: ["right_wheel_joint"]
-    
+    wheels_per_side: 1
+
     wheel_separation: 0.24
     wheel_radius: 0.05
 
     wheel_separation_multiplier: 1.0
     left_wheel_radius_multiplier: 1.0
     right_wheel_radius_multiplier: 1.0
-    
-    publish_rate: 50.0
+    publish_rate: 2.0
     odom_frame_id: odom
     base_frame_id: base_link
-    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
-    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
-    
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
+
+    position_feedback: false
     open_loop: true
     enable_odom_tf: true
-    
-    cmd_vel_topic: "cmd_vel"
-    use_stamped_vel: false
-    
-    # Velocity and acceleration limits
-    linear:
-      x:
-        has_velocity_limits: true
-        max_velocity: 0.5       # m/s
-        has_acceleration_limits: true
-        max_acceleration: 1.0   # m/s^2
-    angular:
-      z:
-        has_velocity_limits: true
-        max_velocity: 2.0       # rad/s
-        has_acceleration_limits: true
-        max_acceleration: 4.0   # rad/s^2
 
-robot_state_publisher:
-  ros__parameters:
-    robot_description: ""  # Will be filled by launch file
+    cmd_vel_timeout: 0.5
+    publish_limited_velocity: true
+    velocity_rolling_window_size: 10
 
-tb6612fng_hardware:
-  ros__parameters:
-    plugin: robot_control/UnibotsMotorHardwareInterface
-    gpio_chip: "gpiochip4"
-    
-    # Left wheel motor pins
-    left_in1_pin: 8
-    left_in2_pin: 7
-    left_pwm_pin: 12
-    
-    # Right wheel motor pins
-    right_in1_pin: 23
-    right_in2_pin: 24
-    right_pwm_pin: 13
-    
-    # Standby pin (shared between motors)
-    standby_pin: 25
-    
-    # Motor configurations
-    left_reversed: true
-    right_reversed: false
-    
-    # Max velocity that corresponds to 100% duty cycle
-    max_velocity: 10.0  # rad/s
+    linear.x.has_velocity_limits: true
+    linear.x.has_acceleration_limits: true
+    linear.x.has_jerk_limits: true
+    linear.x.max_velocity: 0.5
+    linear.x.min_velocity: -0.5
+    linear.x.max_acceleration: 2.0
+    linear.x.min_acceleration: -2.0
+    linear.x.max_jerk: 10.0
+    linear.x.min_jerk: -10.0
+
+    angular.z.has_velocity_limits: true
+    angular.z.has_acceleration_limits: true
+    angular.z.has_jerk_limits: true
+    angular.z.max_velocity: 2.0
+    angular.z.min_velocity: -2.0
+    angular.z.max_acceleration: 4.0
+    angular.z.min_acceleration: -4.0
+    angular.z.max_jerk: 20.0
+    angular.z.min_jerk: -20.0
