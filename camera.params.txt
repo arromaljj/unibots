@@ -1,0 +1,609 @@
+Device info: 
+    Name                          : 	Intel RealSense D435
+    Serial Number                 : 	817412070543
+    Firmware Version              : 	5.16.0.1
+    Recommended Firmware Version  : 	5.16.0.1
+    Physical Port                 : 	/sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb5/5-1/5-1:1.0/video4linux/video0
+    Debug Op Code                 : 	15
+    Advanced Mode                 : 	NO
+    Product Id                    : 	0B07
+    Camera Locked                 : 	YES
+    Usb Type Descriptor           : 	3.2
+    Product Line                  : 	D400
+    Asic Serial Number            : 	813513021258
+    Firmware Update Id            : 	813513021258
+    Dfu Device Path               : 	
+
+Stream Profiles supported by Stereo Module
+ Supported modes:
+    STREAM      RESOLUTION     FORMAT      FPS
+    Infrared 1  1280x800       Y16         @ 25/15 Hz
+    Infrared 1      |          Y8          @ 30/15 Hz
+    Infrared 1  1280x720       Y8          @ 30/15/6 Hz
+    Infrared 1   848x480       Y8          @ 90/60/30/15/6 Hz
+    Infrared 1   848x100       Y8          @ 300/100 Hz
+    Infrared 1   640x480       Y8          @ 90/60/30/15/6 Hz
+    Infrared 1   640x400       Y16         @ 25/15 Hz
+    Infrared 1   640x360       Y8          @ 90/60/30/15/6 Hz
+    Infrared 1   480x270       Y8          @ 90/60/30/15/6 Hz
+    Infrared 1   424x240       Y8          @ 90/60/30/15/6 Hz
+    Infrared 2  1280x800       Y16         @ 25/15 Hz
+    Infrared 2      |          Y8          @ 30/15 Hz
+    Infrared 2  1280x720       Y8          @ 30/15/6 Hz
+    Infrared 2   848x480       Y8          @ 90/60/30/15/6 Hz
+    Infrared 2   848x100       Y8          @ 300/100 Hz
+    Infrared 2   640x480       Y8          @ 90/60/30/15/6 Hz
+    Infrared 2   640x400       Y16         @ 25/15 Hz
+    Infrared 2   640x360       Y8          @ 90/60/30/15/6 Hz
+    Infrared 2   480x270       Y8          @ 90/60/30/15/6 Hz
+    Infrared 2   424x240       Y8          @ 90/60/30/15/6 Hz
+    Depth       1280x720       Z16         @ 30/15/6 Hz
+    Depth        848x480       Z16         @ 90/60/30/15/6 Hz
+    Depth        848x100       Z16         @ 300/100 Hz
+    Depth        640x480       Z16         @ 90/60/30/15/6 Hz
+    Depth        640x360       Z16         @ 90/60/30/15/6 Hz
+    Depth        480x270       Z16         @ 90/60/30/15/6 Hz
+    Depth        424x240       Z16         @ 90/60/30/15/6 Hz
+    Depth        256x144       Z16         @ 300/90 Hz
+
+Stream Profiles supported by RGB Camera
+ Supported modes:
+    STREAM      RESOLUTION     FORMAT      FPS
+    Color       1920x1080      RGB8        @ 30/15/6 Hz
+    Color           |          Y8          @ 30/15/6 Hz
+    Color           |          BGRA8       @ 30/15/6 Hz
+    Color           |          RGBA8       @ 30/15/6 Hz
+    Color           |          BGR8        @ 30/15/6 Hz
+    Color           |          YUYV        @ 30/15/6 Hz
+    Color       1280x720       RGB8        @ 30/15/6 Hz
+    Color           |          Y8          @ 30/15/6 Hz
+    Color           |          BGRA8       @ 30/15/6 Hz
+    Color           |          RGBA8       @ 30/15/6 Hz
+    Color           |          BGR8        @ 30/15/6 Hz
+    Color           |          YUYV        @ 30/15/6 Hz
+    Color        960x540       RGB8        @ 60/30/15/6 Hz
+    Color           |          Y8          @ 60/30/15/6 Hz
+    Color           |          BGRA8       @ 60/30/15/6 Hz
+    Color           |          RGBA8       @ 60/30/15/6 Hz
+    Color           |          BGR8        @ 60/30/15/6 Hz
+    Color           |          YUYV        @ 60/30/15/6 Hz
+    Color        848x480       RGB8        @ 60/30/15/6 Hz
+    Color           |          Y8          @ 60/30/15/6 Hz
+    Color           |          BGRA8       @ 60/30/15/6 Hz
+    Color           |          RGBA8       @ 60/30/15/6 Hz
+    Color           |          BGR8        @ 60/30/15/6 Hz
+    Color           |          YUYV        @ 60/30/15/6 Hz
+    Color        640x480       RGB8        @ 60/30/15/6 Hz
+    Color           |          Y8          @ 60/30/15/6 Hz
+    Color           |          BGRA8       @ 60/30/15/6 Hz
+    Color           |          RGBA8       @ 60/30/15/6 Hz
+    Color           |          BGR8        @ 60/30/15/6 Hz
+    Color           |          YUYV        @ 60/30/15/6 Hz
+    Color        640x360       RGB8        @ 60/30/15/6 Hz
+    Color           |          Y8          @ 60/30/15/6 Hz
+    Color           |          BGRA8       @ 60/30/15/6 Hz
+    Color           |          RGBA8       @ 60/30/15/6 Hz
+    Color           |          BGR8        @ 60/30/15/6 Hz
+    Color           |          YUYV        @ 60/30/15/6 Hz
+    Color        424x240       RGB8        @ 60/30/15/6 Hz
+    Color           |          Y8          @ 60/30/15/6 Hz
+    Color           |          BGRA8       @ 60/30/15/6 Hz
+    Color           |          RGBA8       @ 60/30/15/6 Hz
+    Color           |          BGR8        @ 60/30/15/6 Hz
+    Color           |          YUYV        @ 60/30/15/6 Hz
+    Color        320x240       RGB8        @ 60/30/6 Hz
+    Color           |          Y8          @ 60/30/6 Hz
+    Color           |          BGRA8       @ 60/30/6 Hz
+    Color           |          RGBA8       @ 60/30/6 Hz
+    Color           |          BGR8        @ 60/30/6 Hz
+    Color           |          YUYV        @ 60/30/6 Hz
+    Color        320x180       RGB8        @ 60/30/6 Hz
+    Color           |          Y8          @ 60/30/6 Hz
+    Color           |          BGRA8       @ 60/30/6 Hz
+    Color           |          RGBA8       @ 60/30/6 Hz
+    Color           |          BGR8        @ 60/30/6 Hz
+    Color           |          YUYV        @ 60/30/6 Hz
+
+ 25/03 17:15:56,059 ERROR [281473433264160] (rs.cpp:237) [rs2_get_video_stream_intrinsics( from:0xaaaad10d73d0, intr:[ -808570992x65535  p[2.10195e-44 0]  f[7.31541e+34 2.74886e+26]  UNKNOWN [9.31105e-39 -6.91857e+09 9.18341e-41 -6.91858e+09 9.18341e-41] ] ) Not Implemented] No intrinsics are available for this stream profile!
+ 25/03 17:15:56,060 ERROR [281473433264160] (rs.cpp:237) [rs2_get_video_stream_intrinsics( from:0xaaaad10afe40, intr:[ -808570992x65535  p[2.10195e-44 0]  f[7.31541e+34 2.74886e+26]  UNKNOWN [9.31105e-39 -6.91857e+09 9.18341e-41 -6.91858e+09 9.18341e-41] ] ) Not Implemented] No intrinsics are available for this stream profile!
+ 25/03 17:15:56,061 ERROR [281473433264160] (rs.cpp:237) [rs2_get_video_stream_intrinsics( from:0xaaaad10ba490, intr:[ 640x480  p[320.442 242.281]  f[389.563 389.563]  Brown Conrady [0 0 0 0 0] ] ) Not Implemented] No intrinsics are available for this stream profile!
+ 25/03 17:15:56,061 ERROR [281473433264160] (rs.cpp:237) [rs2_get_video_stream_intrinsics( from:0xaaaad10b5fb0, intr:[ 640x480  p[320.442 242.281]  f[389.563 389.563]  Brown Conrady [0 0 0 0 0] ] ) Not Implemented] No intrinsics are available for this stream profile!
+ 25/03 17:15:56,061 ERROR [281473433264160] (rs.cpp:237) [rs2_get_video_stream_intrinsics( from:0xaaaad10d7480, intr:[ 424x240  p[212.244 121.26]  f[215.071 215.071]  Brown Conrady [0 0 0 0 0] ] ) Not Implemented] No intrinsics are available for this stream profile!
+ 25/03 17:15:56,061 ERROR [281473433264160] (rs.cpp:237) [rs2_get_video_stream_intrinsics( from:0xaaaad10aff40, intr:[ 424x240  p[212.244 121.26]  f[215.071 215.071]  Brown Conrady [0 0 0 0 0] ] ) Not Implemented] No intrinsics are available for this stream profile!
+ 25/03 17:15:56,061 ERROR [281473433264160] (rs.cpp:237) [rs2_get_video_stream_intrinsics( from:0xaaaad10ba540, intr:[ 640x480  p[320.442 242.281]  f[389.563 389.563]  Brown Conrady [0 0 0 0 0] ] ) Not Implemented] No intrinsics are available for this stream profile!
+ 25/03 17:15:56,061 ERROR [281473433264160] (rs.cpp:237) [rs2_get_video_stream_intrinsics( from:0xaaaad10b6060, intr:[ 640x480  p[320.442 242.281]  f[389.563 389.563]  Brown Conrady [0 0 0 0 0] ] ) Not Implemented] No intrinsics are available for this stream profile!
+Intrinsic Parameters:
+
+ Intrinsic of "Depth" / 256x144 / {Z16}
+  Width:      	256
+  Height:     	144
+  PPX:        	128.737243652344
+  PPY:        	75.8024597167969
+  Fx:         	649.272094726562
+  Fy:         	649.272094726562
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	22.3 x 12.66
+
+ Intrinsic of "Depth" / 424x240 / {Z16}
+  Width:      	424
+  Height:     	240
+  PPX:        	212.244216918945
+  PPY:        	121.259567260742
+  Fx:         	215.071380615234
+  Fy:         	215.071380615234
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.32
+
+ Intrinsic of "Depth" / 480x270 / {Z16}
+  Width:      	480
+  Height:     	270
+  PPX:        	240.276458740234
+  PPY:        	136.425918579102
+  Fx:         	243.477035522461
+  Fy:         	243.477035522461
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Depth" / 640x360 / {Z16}
+  Width:      	640
+  Height:     	360
+  PPX:        	320.368621826172
+  PPY:        	181.901229858398
+  Fx:         	324.636047363281
+  Fy:         	324.636047363281
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Depth" / 640x480 / {Z16}
+  Width:      	640
+  Height:     	480
+  PPX:        	320.442352294922
+  PPY:        	242.281478881836
+  Fx:         	389.563262939453
+  Fy:         	389.563262939453
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	78.8 x 63.27
+
+ Intrinsic of "Depth" / 848x100 / {Z16}
+  Width:      	848
+  Height:     	100
+  PPX:        	424.488433837891
+  PPY:        	52.5191345214844
+  Fx:         	430.142761230469
+  Fy:         	430.142761230469
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 13.26
+
+ Intrinsic of "Depth" / 848x480 / {Z16}
+  Width:      	848
+  Height:     	480
+  PPX:        	424.488433837891
+  PPY:        	242.519134521484
+  Fx:         	430.142761230469
+  Fy:         	430.142761230469
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.32
+
+ Intrinsic of "Depth" / 1280x720 / {Z16}
+  Width:      	1280
+  Height:     	720
+  PPX:        	640.737243652344
+  PPY:        	363.802459716797
+  Fx:         	649.272094726562
+  Fy:         	649.272094726562
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Color" / 320x180 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	320
+  Height:     	180
+  PPX:        	161.162185668945
+  PPY:        	91.9816665649414
+  Fx:         	231.709457397461
+  Fy:         	231.794342041016
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	69.25 x 42.44
+
+ Intrinsic of "Color" / 320x240 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	320
+  Height:     	240
+  PPX:        	161.549591064453
+  PPY:        	122.642227172852
+  Fx:         	308.945953369141
+  Fy:         	309.059112548828
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	54.76 x 42.44
+
+ Intrinsic of "Color" / 424x240 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	424
+  Height:     	240
+  PPX:        	213.549575805664
+  PPY:        	122.642227172852
+  Fx:         	308.945922851562
+  Fy:         	309.059112548828
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	68.91 x 42.44
+
+ Intrinsic of "Color" / 640x360 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	640
+  Height:     	360
+  PPX:        	322.324371337891
+  PPY:        	183.963333129883
+  Fx:         	463.418914794922
+  Fy:         	463.588684082031
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	69.25 x 42.44
+
+ Intrinsic of "Color" / 640x480 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	640
+  Height:     	480
+  PPX:        	323.099182128906
+  PPY:        	245.284454345703
+  Fx:         	617.891906738281
+  Fy:         	618.118225097656
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	54.76 x 42.44
+
+ Intrinsic of "Color" / 848x480 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	848
+  Height:     	480
+  PPX:        	427.099151611328
+  PPY:        	245.284454345703
+  Fx:         	617.891845703125
+  Fy:         	618.118225097656
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	68.91 x 42.44
+
+ Intrinsic of "Color" / 960x540 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	960
+  Height:     	540
+  PPX:        	483.486572265625
+  PPY:        	275.945007324219
+  Fx:         	695.128356933594
+  Fy:         	695.382995605469
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	69.25 x 42.44
+
+ Intrinsic of "Color" / 1280x720 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	1280
+  Height:     	720
+  PPX:        	644.648742675781
+  PPY:        	367.926666259766
+  Fx:         	926.837829589844
+  Fy:         	927.177368164062
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	69.25 x 42.44
+
+ Intrinsic of "Color" / 1920x1080 / {YUYV/RGB8/BGR8/RGBA8/BGRA8/Y8}
+  Width:      	1920
+  Height:     	1080
+  PPX:        	966.97314453125
+  PPY:        	551.890014648438
+  Fx:         	1390.25671386719
+  Fy:         	1390.76599121094
+  Distortion: 	Inverse Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	69.25 x 42.44
+
+ Intrinsic of "Infrared 1" / 424x240 / {Y8}
+  Width:      	424
+  Height:     	240
+  PPX:        	212.244216918945
+  PPY:        	121.259567260742
+  Fx:         	215.071380615234
+  Fy:         	215.071380615234
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.32
+
+ Intrinsic of "Infrared 1" / 480x270 / {Y8}
+  Width:      	480
+  Height:     	270
+  PPX:        	240.276458740234
+  PPY:        	136.425918579102
+  Fx:         	243.477035522461
+  Fy:         	243.477035522461
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Infrared 1" / 640x360 / {Y8}
+  Width:      	640
+  Height:     	360
+  PPX:        	320.368621826172
+  PPY:        	181.901229858398
+  Fx:         	324.636047363281
+  Fy:         	324.636047363281
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Infrared 1" / 640x480 / {Y8}
+  Width:      	640
+  Height:     	480
+  PPX:        	320.442352294922
+  PPY:        	242.281478881836
+  Fx:         	389.563262939453
+  Fy:         	389.563262939453
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	78.8 x 63.27
+
+ Intrinsic of "Infrared 1" / 848x100 / {Y8}
+  Width:      	848
+  Height:     	100
+  PPX:        	424.488433837891
+  PPY:        	52.5191345214844
+  Fx:         	430.142761230469
+  Fy:         	430.142761230469
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 13.26
+
+ Intrinsic of "Infrared 1" / 848x480 / {Y8}
+  Width:      	848
+  Height:     	480
+  PPX:        	424.488433837891
+  PPY:        	242.519134521484
+  Fx:         	430.142761230469
+  Fy:         	430.142761230469
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.32
+
+ Intrinsic of "Infrared 1" / 1280x720 / {Y8}
+  Width:      	1280
+  Height:     	720
+  PPX:        	640.737243652344
+  PPY:        	363.802459716797
+  Fx:         	649.272094726562
+  Fy:         	649.272094726562
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Infrared 1" / 1280x800 / {Y8}
+  Width:      	1280
+  Height:     	800
+  PPX:        	640.737243652344
+  PPY:        	403.732452392578
+  Fx:         	649.272094726562
+  Fy:         	649.272094726562
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 63.27
+
+ Intrinsic of "Infrared 2" / 424x240 / {Y8}
+  Width:      	424
+  Height:     	240
+  PPX:        	212.244216918945
+  PPY:        	121.259567260742
+  Fx:         	215.071380615234
+  Fy:         	215.071380615234
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.32
+
+ Intrinsic of "Infrared 2" / 480x270 / {Y8}
+  Width:      	480
+  Height:     	270
+  PPX:        	240.276458740234
+  PPY:        	136.425918579102
+  Fx:         	243.477035522461
+  Fy:         	243.477035522461
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Infrared 2" / 640x360 / {Y8}
+  Width:      	640
+  Height:     	360
+  PPX:        	320.368621826172
+  PPY:        	181.901229858398
+  Fx:         	324.636047363281
+  Fy:         	324.636047363281
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Infrared 2" / 640x480 / {Y8}
+  Width:      	640
+  Height:     	480
+  PPX:        	320.442352294922
+  PPY:        	242.281478881836
+  Fx:         	389.563262939453
+  Fy:         	389.563262939453
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	78.8 x 63.27
+
+ Intrinsic of "Infrared 2" / 848x100 / {Y8}
+  Width:      	848
+  Height:     	100
+  PPX:        	424.488433837891
+  PPY:        	52.5191345214844
+  Fx:         	430.142761230469
+  Fy:         	430.142761230469
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 13.26
+
+ Intrinsic of "Infrared 2" / 848x480 / {Y8}
+  Width:      	848
+  Height:     	480
+  PPX:        	424.488433837891
+  PPY:        	242.519134521484
+  Fx:         	430.142761230469
+  Fy:         	430.142761230469
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.32
+
+ Intrinsic of "Infrared 2" / 1280x720 / {Y8}
+  Width:      	1280
+  Height:     	720
+  PPX:        	640.737243652344
+  PPY:        	363.802459716797
+  Fx:         	649.272094726562
+  Fy:         	649.272094726562
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 58.01
+
+ Intrinsic of "Infrared 2" / 1280x800 / {Y8}
+  Width:      	1280
+  Height:     	800
+  PPX:        	640.737243652344
+  PPY:        	403.732452392578
+  Fx:         	649.272094726562
+  Fy:         	649.272094726562
+  Distortion: 	Brown Conrady
+  Coeffs:     	0  	0  	0  	0  	0  
+  FOV (deg):  	89.18 x 63.27
+
+
+Extrinsic Parameters:
+Extrinsic from "Depth"	  To	  "Depth" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: 0  0  0  
+
+Extrinsic from "Depth"	  To	  "Color" :
+ Rotation Matrix:
+   0.99997         -0.00211653       0.00740367    
+   0.00212795       0.999997        -0.00153521    
+  -0.00740039       0.00155092       0.999971      
+
+ Translation Vector: 0.0145867085084319  4.54648834420368e-05  0.000282584485830739  
+
+Extrinsic from "Depth"	  To	  "Infrared 1" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: 0  0  0  
+
+Extrinsic from "Depth"	  To	  "Infrared 2" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: -0.0499496720731258  0  0  
+
+Extrinsic from "Color"	  To	  "Depth" :
+ Rotation Matrix:
+   0.99997          0.00212795      -0.00740039    
+  -0.00211653       0.999997         0.00155092    
+   0.00740367      -0.00153521       0.999971      
+
+ Translation Vector: -0.0145842814818025  -1.50298164953711e-05  -0.000390501721994951  
+
+Extrinsic from "Color"	  To	  "Color" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: 0  0  0  
+
+Extrinsic from "Color"	  To	  "Infrared 1" :
+ Rotation Matrix:
+   0.99997          0.00212795      -0.00740039    
+  -0.00211653       0.999997         0.00155092    
+   0.00740367      -0.00153521       0.999971      
+
+ Translation Vector: -0.0145842814818025  -1.50298164953711e-05  -0.000390501721994951  
+
+Extrinsic from "Color"	  To	  "Infrared 2" :
+ Rotation Matrix:
+   0.99997          0.00212795      -0.00740039    
+  -0.00211653       0.999997         0.00155092    
+   0.00740367      -0.00153521       0.999971      
+
+ Translation Vector: -0.064533956348896  -1.50298164953711e-05  -0.000390501721994951  
+
+Extrinsic from "Infrared 1"	  To	  "Depth" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: 0  0  0  
+
+Extrinsic from "Infrared 1"	  To	  "Color" :
+ Rotation Matrix:
+   0.99997         -0.00211653       0.00740367    
+   0.00212795       0.999997        -0.00153521    
+  -0.00740039       0.00155092       0.999971      
+
+ Translation Vector: 0.0145867085084319  4.54648834420368e-05  0.000282584485830739  
+
+Extrinsic from "Infrared 1"	  To	  "Infrared 1" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: 0  0  0  
+
+Extrinsic from "Infrared 1"	  To	  "Infrared 2" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: -0.0499496720731258  0  0  
+
+Extrinsic from "Infrared 2"	  To	  "Depth" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: 0.0499496720731258  0  0  
+
+Extrinsic from "Infrared 2"	  To	  "Color" :
+ Rotation Matrix:
+   0.99997         -0.00211653       0.00740367    
+   0.00212795       0.999997        -0.00153521    
+  -0.00740039       0.00155092       0.999971      
+
+ Translation Vector: 0.0645349025726318  0.000151755288243294  -8.70625954121351e-05  
+
+Extrinsic from "Infrared 2"	  To	  "Infrared 1" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: 0.0499496720731258  0  0  
+
+Extrinsic from "Infrared 2"	  To	  "Infrared 2" :
+ Rotation Matrix:
+   1   0   0
+   0   1   0
+   0   0   1
+
+ Translation Vector: 0  0  0  
+

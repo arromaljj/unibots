@@ -14,12 +14,15 @@
 #include <limits>
 #include <memory>
 #include <vector>
+#include <std_msgs/msg/float64_multi_array.hpp>
 
 namespace motor_interface
 {
 
 UnibotsMotorHardwareInterface::UnibotsMotorHardwareInterface()
-    : motor_controller_(std::make_unique<MotorController>())
+    : motor_controller_(std::make_unique<MotorController>()),
+      node_(nullptr),
+      motor_state_pub_(nullptr)
 {
 }
 
@@ -39,6 +42,11 @@ hardware_interface::CallbackReturn UnibotsMotorHardwareInterface::on_init(
     {
         return hardware_interface::CallbackReturn::ERROR;
     }
+
+    // Initialize ROS2 node
+    node_ = rclcpp::Node::make_shared("unibots_motor_hardware_interface");
+    motor_state_pub_ = node_->create_publisher<std_msgs::msg::Float64MultiArray>(
+        "motor_states", 10);
 
     // Get GPIO pins from URDF parameters
     int left_in1_pin = std::stoi(info_.hardware_parameters["left_in1_pin"]);
@@ -135,6 +143,15 @@ hardware_interface::CallbackReturn UnibotsMotorHardwareInterface::on_cleanup(
 {
     RCLCPP_INFO(get_logger(), "Cleaning up ...please wait...");
     motor_controller_->cleanup();
+    
+    // Cleanup ROS2 publishers and node
+    if (motor_state_pub_) {
+        motor_state_pub_.reset();
+    }
+    if (node_) {
+        node_.reset();
+    }
+    
     RCLCPP_INFO(get_logger(), "Successfully cleaned up!");
     return hardware_interface::CallbackReturn::SUCCESS;
 }
@@ -194,6 +211,15 @@ hardware_interface::return_type UnibotsMotorHardwareInterface::read(
     {
         hw_states_[0] = hw_commands_[0];  // Left wheel velocity
         hw_states_[1] = hw_commands_[1];  // Right wheel velocity
+
+        // Publish PWM values being sent to the motors
+        if (motor_state_pub_ && node_) {
+            auto message = std_msgs::msg::Float64MultiArray();
+            message.data.resize(2);
+            message.data[0] = motor_controller_->get_left_pwm();   // Left motor PWM
+            message.data[1] = motor_controller_->get_right_pwm();  // Right motor PWM
+            motor_state_pub_->publish(message);
+        }
     }
 
     return hardware_interface::return_type::OK;

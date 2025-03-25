@@ -36,6 +36,10 @@ public:
     void set_velocity(double left_velocity, double right_velocity);
     void set_standby(bool enable);
     void stop();
+    
+    // Get current PWM values
+    double get_left_pwm() const { return left_motor_duty_cycle_; }
+    double get_right_pwm() const { return right_motor_duty_cycle_; }
 
 private:
     bool initialize_gpio();

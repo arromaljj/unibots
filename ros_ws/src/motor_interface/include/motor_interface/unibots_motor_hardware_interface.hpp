@@ -11,6 +11,7 @@
 #include <pluginlib/class_list_macros.hpp>
 #include <vector>
 #include <memory>
+#include <std_msgs/msg/float64_multi_array.hpp>
 #include "motor_interface/motor_controller.hpp"
 
 namespace motor_interface
@@ -42,6 +43,10 @@ private:
     std::unique_ptr<MotorController> motor_controller_;
     std::vector<double> hw_states_;
     std::vector<double> hw_commands_;
+    
+    // ROS2 node and publisher
+    std::shared_ptr<rclcpp::Node> node_;
+    std::shared_ptr<rclcpp::Publisher<std_msgs::msg::Float64MultiArray>> motor_state_pub_;
 };
 
 }  // namespace motor_interface
